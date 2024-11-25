@@ -16,24 +16,22 @@ class consultasController extends Controller
     //Listar materias
     function listarMaterias() {
         // Seleccionar todos los nombres de los cursos
-       return $courses = Subject::pluck('name');
+        return $courses = Subject::pluck('name');
     }
 
     //Listar materias
     function listarMaterias2() {
         // Seleccionar todos los nombres de los cursos
-       return $courses = Subject::all();
+        return $courses = Subject::all();
     }
 
     function FiltrarAlumnos() {
         // Seleccionar todos los estudiantes cuyo nombre comience con 'A'
-       return $students = Student::where('name', 'LIKE', 'A%')->get();
-        
+        return $students = Student::where('name', 'LIKE', 'A%')->get();
     }
     function Alumnos() {
         // Seleccionar todos los estudiantes cuyo nombre comience con 'A'
-       return $students = Student::all();
-        
+        return $students = Student::all();
     }
 
     function cursos()  {
@@ -102,5 +100,4 @@ class consultasController extends Controller
                 'email' => 'Pedro@example.com'
             ]);
     }
-
 }
