@@ -7,8 +7,6 @@ use App\Models\Student;
 use App\Models\Course;
 
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
