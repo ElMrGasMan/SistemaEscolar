@@ -1,0 +1,362 @@
+html, body {
+	margin: 0px;
+	padding:0px;
+	background-image:url(../images/bg.gif);
+}
+
+h1, h2, h3, h4, h5, h6, p, form {
+	margin: 0px;
+	padding:0px;
+}
+
+#wrapper {
+	width:800px;
+	margin:0px auto;
+	background-color:#FFF;
+}
+
+#content {
+	width:778px;
+	margin:0px auto;
+	background-image:url(../images/bg_header_top.gif);
+	background-repeat:repeat-x;
+	background-position:top;
+}
+
+#header {
+	height:96px;
+}
+
+#logo {
+	width:258px;
+	float:left;
+}
+
+#logo h1{
+	font-family:"Trebuchet MS";
+	font-size:26px;
+	color:#F76B0C;
+	font-weight:normal;
+	text-decoration:none;
+	padding-left:40px;
+	padding-top:30px;
+}
+
+#logo h4 {
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#808080;
+	font-weight:normal;
+	text-decoration:none;
+	padding-left:75px;
+}
+
+#links ul {
+	margin:0px; 
+	padding-top:67px;
+}
+
+#links li{
+	float:left;
+	list-style-type:none;
+	width:129px;
+	height:25px;
+	text-align:center;
+	background-color:#F4A80A;
+	border-left:1px solid #FFF;
+	padding-top:4px;
+}
+
+#links a{
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#fff;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+#links a:hover{
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#fff;
+	font-weight:normal;
+	text-decoration:underline;
+}
+
+#mainimg {
+	background-image:url(../images/main_img.jpg);
+	background-repeat:no-repeat;
+	height:132px;
+	text-align:right;
+}
+
+#mainimg h3 {
+	font-family:"Trebuchet MS";
+	font-size:48px;
+	color:#fff;
+	font-weight:normal;
+	text-decoration:none;
+	padding:20px 40px 0px 0px;
+}
+
+#mainimg h4 {
+	font-family:"Trebuchet MS";
+	font-size:18px;
+	color:#fff;
+	font-weight:normal;
+	text-decoration:none;
+	padding:0px 40px 0px 0px;
+}
+
+#contentarea {
+	clear:both;
+	padding:25px 0px;
+}
+
+#leftbar {
+	float:left;
+	width:539px;
+	border-right:1px solid #BCBDBC;
+}
+
+#leftbar {
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#353635;
+	font-weight:normal;
+	text-decoration:none;
+	padding:0px 40px;
+}
+
+#leftbar h2{
+	font-family:"Trebuchet MS";
+	font-size:26px;
+	color:#EE8907;
+	font-weight:normal;
+	text-decoration:none;
+	padding-left:40px;
+	padding-bottom:5px;
+}
+
+#leftbar p{
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#797B7A;
+	font-weight:normal;
+	text-decoration:none;
+	padding:0px 40px;
+}
+
+/* Modificar este color para que el boton de nuevo se vea de manera correcta                  */
+#leftbar a {
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#221a43;
+	font-weight:bold;
+	text-decoration:none;
+	padding:0px 40px;
+}
+
+#leftbar a:hover {
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#000;
+	font-weight:bold;
+	text-decoration:none;
+	padding:0px 40px;
+}
+
+#rightbar {
+	float:left;
+	width:237px;
+}
+
+#rightbar h2{
+	font-family:"Trebuchet MS";
+	font-size:26px;
+	color:#797B7A;
+	font-weight:normal;
+	text-decoration:none;
+	padding-left:25px;
+	padding-bottom:5px;
+}
+
+#rightbar p{
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#797B7A;
+	font-weight:normal;
+	text-decoration:none;
+	padding:0px 25px;
+}
+
+.orangetext {
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#EE8907;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#bottom {
+	clear:both;
+	height:32px;
+	padding-top:25px;
+}
+
+#email {
+	float:left;
+	width:500px;
+	background-color:#9BBE00;
+	height:27px;
+	padding-top:5px;
+}
+
+#email a{
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#fff;
+	font-weight:normal;
+	text-decoration:underline;
+	padding:0px 40px;
+}
+
+#email a:hover{
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#fff;
+	font-weight:normal;
+	text-decoration:none;
+	padding:0px 40px;
+	
+}
+
+#validtext {
+	float:left;
+	width:278px;
+	background-color:#9BBE00;
+	height:27px;
+	padding-top:5px;
+}
+
+#validtext p{
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#fff;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:right;
+	padding-right:35px;
+}
+
+#validtext a{
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#fff;
+	font-weight:normal;
+	text-decoration:underline;
+}
+
+#validtext a:hover{
+	font-family:"Trebuchet MS";
+	font-size:11px;
+	color:#fff;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+/* Estilos de la tabla para respetar el diseño de #leftbar */
+#leftbar .table {
+    width: 100%;
+    margin-top: 20px;
+    font-family: "Trebuchet MS";
+    font-size: 11px;
+    color: #353635;
+    border-collapse: collapse;
+}
+
+#leftbar .table th, 
+#leftbar .table td {
+    padding: 10px;
+    border: 1px solid #BCBDBC;
+    text-align: left;
+}
+
+/* Encabezado de la tabla */
+#leftbar .table th {
+    background-color: #EE8907;
+    color: #FFFFFF;
+    font-weight: normal;
+}
+
+/* Filas alternadas */
+#leftbar .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F9F9F9;
+}
+
+/* Filas al pasar el ratón */
+#leftbar .table-striped tbody tr:hover {
+    background-color: #EEE;
+}
+
+/* Estilos para botones */
+#leftbar .table .btn {
+    font-size: 10px;
+    padding: 3px 6px;
+    margin-right: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#leftbar .table .btn-primary {
+    background-color: #007BFF;
+    border-color: #007BFF;
+}
+
+#leftbar .table .btn-warning {
+    background-color: #FFC107;
+    border-color: #FFC107;
+}
+
+#leftbar .table .btn-danger {
+    background-color: #DC3545;
+    border-color: #DC3545;
+}
+
+/* TRABAJANDO EL FORMULARIO */
+
+.form-group {
+	margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	width: 100%;
+	padding: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.submit-button {
+	background-color: #ffa500;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
+
+@media (min-width: 600px) {
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 50%;
+	}
+}
+
+@media (min-width: 900px) {
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 33.3%;
+	}
+}
