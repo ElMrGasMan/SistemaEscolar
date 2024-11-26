@@ -177,3 +177,6 @@ Route::get('/Q_FiltroEstudiantes_2', [App\Http\Controllers\consultasController::
 
 Route::get('/professor', [ProfessorController::class, 'index'])->name('professor.index');
 Route::get('/professors/create', [ProfessorController::class, 'create'])->name('professors.create');
+
+Route::post('/commissions/create', [CommissionController::class, 'store'])->name('commission.store');
+Route::post('/courses/create', [CourseController::class, 'store'])->name('course.store');
