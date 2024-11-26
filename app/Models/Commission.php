@@ -25,8 +25,8 @@ class Commission extends Model
     /**
      * Relación con Professor: una Commission puede tener muchos Professors.
      */
-    public function professors()
+    public function professor()
     {
-        return $this->belongsToMany(Professor::class);
+        return $this->belongsTo(Professor::class);
     }
 }

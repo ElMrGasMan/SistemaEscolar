@@ -18,6 +18,11 @@ class Course extends Model
         return $this->belongsToMany(Student::class, 'course_student')->withPivot('commission_id');
     }
 
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
+
     public function commissions()
     {
         return $this->hasMany(Commission::class);

@@ -13,7 +13,7 @@
             </div>
         @endif
         
-        <a href="{{ route('Commission.create') }}" class="btn btn-primary">Crear Comision</a>
+        <a href="{{ route('commissions.create') }}" class="btn btn-primary">Crear Comision</a>
         
         <table class="table table-bordered mt-3">
             <thead>
@@ -33,8 +33,8 @@
                         <td>{{ $commission->course_id }}</td>
                         <td>{{ $commission->professor_id}}</td>
                         <td>
-                            <a href="{{ route('commission.edit', $commission->id) }}" class="btn btn-warning btn-sm">Editar</a>
-                            <form action="{{ route('commission.destroy', $commission->id) }}" method="POST" style="display:inline;">
+                            <a href="{{ route('commissions.edit', $commission->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                            <form action="{{ route('commissions.destroy', $commission->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
