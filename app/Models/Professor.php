@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Professor extends Model
 {
     use HasFactory;
-   
+    
+    protected $table = 'professors';
+
     protected $fillable = ['name', 'specialization'];
-  
+
     public function commissions()
     {
-        return $this->belongsToMany(Commission::class);
+        return $this->hasMany(Commission::class);
     }
 }

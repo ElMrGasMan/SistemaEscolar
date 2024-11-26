@@ -7,7 +7,7 @@
 <a href="{{ route('students.create') }}" class="btn btn-primary">Add Student</a>
 
 @if(session('success'))  
-  <div class="alert alert-success">{{ session('success') }}</div>  
+    <div class="alert alert-success">{{ session('success') }}</div>  
 @endif
 
 <table class="table table-striped">  
@@ -38,6 +38,3 @@
 </table>  
 
 @endsection
-
-
-

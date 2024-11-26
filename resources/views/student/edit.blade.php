@@ -22,9 +22,9 @@
         <input type="email" name="email" class="form-control" value="{{ old('email', $student->email ?? '') }}" required>
     </div>
     <div class="form-group">
-      <label for="course_id">Curso id</label>
-      <input type="course_id" name="course_id" class="form-control" value="{{ old('course_id', $student->course_id ?? '') }}" required>
-  </div>
+        <label for="course_id">Curso id</label>
+        <input type="course_id" name="course_id" class="form-control" value="{{ old('course_id', $student->course_id ?? '') }}" required>
+    </div>
 
     <button type="submit" class="btn btn-primary">{{ isset($student) ? 'Update' : 'Create' }}</button>
 </form>

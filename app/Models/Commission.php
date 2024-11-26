@@ -10,7 +10,9 @@ class Commission extends Model
     
     use HasFactory;
 
-    protected $fillable = ['aula', 'horario', 'course_id'];
+    protected $table = 'commissions';
+
+    protected $fillable = ['aula', 'horario', 'course_id', 'professor_id'];
 
     /**
      * Relación con Course: una Commission pertenece a un Course.
@@ -19,8 +21,6 @@ class Commission extends Model
     {
         return $this->belongsTo(Course::class);
     }
-
-    
 
     /**
      * Relación con Professor: una Commission puede tener muchos Professors.

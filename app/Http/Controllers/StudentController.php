@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course_student;
 use Illuminate\Http\Request;
 use App\Models\Student;
 
@@ -23,26 +24,17 @@ class StudentController extends Controller
 
     //
     public function store(Request $request){
-      
-      //dd($request->name .' email    '.$request->email);
-
-      $v= $request->validate(
+        //dd($request->name .' email    '.$request->email);
+        $v= $request->validate(
         ['name'=>'required|string|max:255',
-         'email'=>'required|email|unique:students,email,']
-      );
+            'email'=>'required|email|unique:students,email,']
+        );
         $student = new Student();
         $student->name = $request->name; 
         $student->email = $request->email;      
-        $student->course_id =$request->course_id;
         $student->save();
 
-    
-    
         return redirect()->route('students.index')->with('success','Estudiante creado');
-
-
-
-
     }
 
     public function edit($id)
@@ -68,14 +60,15 @@ class StudentController extends Controller
 
     public function show(Student $student)
     {
-       //dd($student->name);
-       return view('student.show',compact('student'));
+        //dd($student->name);
+        return view('student.show',compact('student'));
     }
 
     //
-    public function destroy(Request $request,Student $student){
-       //dd( $student->id);
-       $student->delete();
-       return redirect()->route('students.index')->with('success','Estudiante '.$student->id.' se elimino');
+    public function destroy(Request $request, Student $student)
+    {
+        //dd( $student->id);
+        $student->delete();
+        return redirect()->route('students.index')->with('success','Estudiante '.$student->id.' se elimino');
     }
 }

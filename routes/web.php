@@ -1,7 +1,11 @@
 <?php
 use App\Http\Controllers\CalculationController;
+use App\Http\Controllers\CommissionController;
+use App\Http\Controllers\CourseStudentController;
+use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Student;
 use App\Models\Course;
@@ -97,69 +101,74 @@ Route::get('/get-course-with-students/{course_id}', function ($course_id) {
     }
 });
 
+
 Route::get('/update-student/{id}', function($id) {
     $student = Student::find($id);
     
     if ($student) {
-            $student->name = 'Pedro Navaja';
-            $student->email = 'pedro.navaja@example.com';
-            $student->save();
-    
-            return 'Estudiante actualizado exitosamente';
-        } else {
-           return 'Estudiante no encontrado';
-       }
+        $student->name = 'Pedro Navaja';
+        $student->email = 'pedro.navaja@example.com';
+        $student->save();
+
+        return 'Estudiante actualizado exitosamente';
+    } else {
+        return 'Estudiante no encontrado';
+    }
+});
+
+
+Route::get('/delete-student/{id}', function($id) {
+    $student = Student::find($id);
+        if ($student) {
+            $student->delete();
+    return 'Estudiante eliminado exitosamente';
+            } else {
+            return 'Estudiante no encontrado';
+            }
     });
-    
-    Route::get('/delete-student/{id}', function($id) {
-        $student = Student::find($id);
-          if ($student) {
-              $student->delete();
-        return 'Estudiante eliminado exitosamente';
-              } else {
-              return 'Estudiante no encontrado';
-             }
-        });
-        
-
-        Route::get('/student/{id}', function($id) {
-            $student = Student::find($id);
-
-            dd($student) ;
-            if ($student) {
-               return $student->id . ' - ' . $student->name . ' - ' . $student->email;
-                } else {
-               return 'Estudiante no encontrado';
-             }
-            });
 
 
-            Route::resource('students',StudentController::class);
-            Route::resource('courses', CourseController::class);
+Route::get('/student/{id}', function($id) {
+    $student = Student::find($id);
+
+    dd($student) ;
+    if ($student) {
+        return $student->id . ' - ' . $student->name . ' - ' . $student->email;
+        } else {
+        return 'Estudiante no encontrado';
+        }
+    });
 
 
 
+//RUTAS DE CONTROLADORES----------------------------------------------------------------------
+Route::resource('students', StudentController::class);
+Route::resource('courses', CourseController::class);
+Route::resource('subjects', SubjectController::class);
+Route::resource('professors', ProfessorController::class);
+Route::resource('commissions', CommissionController::class);
+Route::resource('course_students', CourseStudentController::class);
+//RUTAS DE CONTROLADORES----------------------------------------------------------------------
 
-            Route::get('/blog', function () {
-                return view('nueva_vista.blog'); // Muestra la vista del blog
-            });
-            
-            Route::get('/contacto', function () {
-                return view('nueva_vista.contacto'); // Muestra la vista de contacto
-            });
+
+Route::get('/blog', function () {
+    return view('nueva_vista.blog'); // Muestra la vista del blog
+});
+
+Route::get('/contacto', function () {
+    return view('nueva_vista.contacto'); // Muestra la vista de contacto
+});
 
 
-            Route::get('/Q_Materias', [App\Http\Controllers\consultasController::class, 'listarMaterias']);
-            Route::get('/Q_Materias2', [App\Http\Controllers\consultasController::class, 'listarMaterias2']);
-            Route::get('/Q_FiltrarAlumnos', [App\Http\Controllers\consultasController::class, 'FiltrarAlumnos']);
-            Route::get('/Q_Alumnos', [App\Http\Controllers\consultasController::class, 'Alumnos']);
-            Route::get('/Q_Cursos', [App\Http\Controllers\consultasController::class, 'cursos']);
-            Route::get('/Q_alumnos_del_curso', [App\Http\Controllers\consultasController::class, 'alumnos_del_curso']);
-            Route::get('/Q_curso_materia', [App\Http\Controllers\consultasController::class, 'curso_materia']);
-            Route::get('/Q_CursosConMasDeTresEstudiantes', [App\Http\Controllers\consultasController::class, 'CursosConMasDeTresEstudiantes']);
-            Route::get('/Q_ProfesoresEspecializacion', [App\Http\Controllers\consultasController::class, 'ProfesoresEspecializacion']);
-            Route::get('/Q_EntreFechas', [App\Http\Controllers\consultasController::class, 'EntreFechas']);
-            Route::get('/Q_NuevoEstudiante_Pedro', [App\Http\Controllers\consultasController::class, 'NuevoEstudiante_Pedro']);
-            Route::get('/Q_FiltroEstudiantes_2', [App\Http\Controllers\consultasController::class, 'FiltroEstudiantes_2']);
-
-           
+Route::get('/Q_Materias', [App\Http\Controllers\consultasController::class, 'listarMaterias']);
+Route::get('/Q_Materias2', [App\Http\Controllers\consultasController::class, 'listarMaterias2']);
+Route::get('/Q_FiltrarAlumnos', [App\Http\Controllers\consultasController::class, 'FiltrarAlumnos']);
+Route::get('/Q_Alumnos', [App\Http\Controllers\consultasController::class, 'Alumnos']);
+Route::get('/Q_Cursos', [App\Http\Controllers\consultasController::class, 'cursos']);
+Route::get('/Q_alumnos_del_curso', [App\Http\Controllers\consultasController::class, 'alumnos_del_curso']);
+Route::get('/Q_curso_materia', [App\Http\Controllers\consultasController::class, 'curso_materia']);
+Route::get('/Q_CursosConMasDeTresEstudiantes', [App\Http\Controllers\consultasController::class, 'CursosConMasDeTresEstudiantes']);
+Route::get('/Q_ProfesoresEspecializacion', [App\Http\Controllers\consultasController::class, 'ProfesoresEspecializacion']);
+Route::get('/Q_EntreFechas', [App\Http\Controllers\consultasController::class, 'EntreFechas']);
+Route::get('/Q_NuevoEstudiante_Pedro', [App\Http\Controllers\consultasController::class, 'NuevoEstudiante_Pedro']);
+Route::get('/Q_FiltroEstudiantes_2', [App\Http\Controllers\consultasController::class, 'FiltroEstudiantes_2']);

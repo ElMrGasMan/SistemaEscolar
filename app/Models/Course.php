@@ -9,17 +9,17 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $table = 'courses';
+
+    protected $fillable = ['name', 'subject_id'];
 
     public function students()
     {
         return $this->belongsToMany(Student::class, 'course_student')->withPivot('commission_id');
     }
-    
+
     public function commissions()
     {
         return $this->hasMany(Commission::class);
     }
-
-
 }

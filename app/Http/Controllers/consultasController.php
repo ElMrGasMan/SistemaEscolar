@@ -6,7 +6,7 @@ use App\Models\Student;
 use App\Models\Subject;
 use App\Models\Course;
 use App\Models\Professor;
-use App\Models\course_student;
+use App\Models\Course_student;
 use App\Models\Commission;
 
 use Illuminate\Http\Request;

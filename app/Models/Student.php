@@ -9,8 +9,10 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'course_id'];
-    
+    protected $table = 'students';
+
+    protected $fillable = ['name', 'email'];
+
     public function courses()
     {
         return $this->belongsToMany(Course::class, 'course_student')->withPivot('commission_id');
