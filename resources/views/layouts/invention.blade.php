@@ -21,10 +21,10 @@
           {{--<li><a href="{{ url('/blog') }}">Blog</a></li>--}}
           <li><a href="{{ route('students.index') }}">Estudiantes</a></li>
           <li><a href="{{ route('professor.index') }}">Profesores</a></li>
-          <li><a href="{{ route('students.index') }}">Materias</a></li>
-          <li><a href="{{ route('students.index') }}">Cursos</a></li>
-          <li><a href="{{ route('students.index') }}">Comisiones</a></li>
-          <li><a href="{{ route('students.index') }}">Estud. Inscriptos</a></li>          
+          <li><a href="{{ route('subjects.index') }}">Materias</a></li>
+          <li><a href="{{ route('courses.index') }}">Cursos</a></li>
+          <li><a href="{{ route('commissions.index') }}">Comisiones</a></li>
+          <li><a href="{{ route('course_students.index') }}">Estud. Inscriptos</a></li>          
           {{--<li><a href="{{ action([App\Http\Controllers\CalculationController::class, 'showForm']) }}">Cálculo</a></li>
           <li><a href="{{ url('/contacto') }}">Contacto</a></li>--}}
         </ul>

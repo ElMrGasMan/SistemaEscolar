@@ -16,7 +16,7 @@ class SubjectController extends Controller
 
     public function create()
     {
-        return view('subjects.edit');
+        return view('subjects.create');
     }
 
     public function store(Request $request)
@@ -40,22 +40,21 @@ class SubjectController extends Controller
     public function edit($id)
     {
         $subject = Subject::find($id);
-        return view('subject.edit', compact('subject'));
+        return view('subjects.edit', compact('subject'));
     }
-
-
+    
     public function update(Request $request, Subject $subject)
     {
         $request->validate([
             'name' => 'required|string|max:255'
         ]);
 
-        $subject->update($request->all());
+        $subject ->update($request->all());
 
         return redirect()->route('subjects.index')->with('success', 'Subject actualizado exitosamente.');
     }
 
-
+    
     public function destroy(Subject $subject)
     {
         $subject->delete();
