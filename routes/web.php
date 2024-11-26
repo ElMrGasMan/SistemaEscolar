@@ -172,3 +172,8 @@ Route::get('/Q_ProfesoresEspecializacion', [App\Http\Controllers\consultasContro
 Route::get('/Q_EntreFechas', [App\Http\Controllers\consultasController::class, 'EntreFechas']);
 Route::get('/Q_NuevoEstudiante_Pedro', [App\Http\Controllers\consultasController::class, 'NuevoEstudiante_Pedro']);
 Route::get('/Q_FiltroEstudiantes_2', [App\Http\Controllers\consultasController::class, 'FiltroEstudiantes_2']);
+
+
+
+Route::get('/professor', [ProfessorController::class, 'index'])->name('professor.index');
+Route::get('/professors/create', [ProfessorController::class, 'create'])->name('professors.create');

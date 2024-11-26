@@ -1,7 +1,7 @@
 html, body {
 	margin: 0px;
 	padding:0px;
-	background-image:url(../images/bg.gif);
+	background-image:url(../images/fondo1.png);
 }
 
 h1, h2, h3, h4, h5, h6, p, form {
@@ -52,19 +52,24 @@ h1, h2, h3, h4, h5, h6, p, form {
 }
 
 #links ul {
-	margin:0px; 
-	padding-top:67px;
+    display: flex;
+    justify-content: space-between; 
+    margin: 0;
+    padding: 0;
+    list-style: none; 
+    padding-top: 67px;
 }
 
-#links li{
-	float:left;
-	list-style-type:none;
-	width:129px;
-	height:25px;
-	text-align:center;
-	background-color:#F4A80A;
-	border-left:1px solid #FFF;
-	padding-top:4px;
+#links li {
+    flex: 1; 
+    text-align: center;
+    background-color: #F4A80A;
+    border-left: 1px solid #FFF;
+    padding: 4px 0; 
+}
+
+#links li:first-child {
+    border-left: none; 
 }
 
 #links a{
@@ -84,7 +89,7 @@ h1, h2, h3, h4, h5, h6, p, form {
 }
 
 #mainimg {
-	background-image:url(../images/main_img.jpg);
+	background-image:url(../images/fondo1.png);
 	background-repeat:no-repeat;
 	height:132px;
 	text-align:right;

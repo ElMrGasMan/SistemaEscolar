@@ -13,21 +13,26 @@
   <div id="content">
     <div id="header">
       <div id="logo">
-        <h1>logo here</h1>
-        <h4>have your punchline here</h4>
+        <h1>Gestion Escolar</h1>
+        <h4>laboratorio 4</h4>
       </div>
       <div id="links">
         <ul>
-          <li><a href="{{ url('/blog') }}">Blog</a></li>
-          <li><a href="{{ route('students.index') }}">Estudiantes</a></li>          
-          <li><a href="{{ action([App\Http\Controllers\CalculationController::class, 'showForm']) }}">Cálculo</a></li>
-          <li><a href="{{ url('/contacto') }}">Contacto</a></li>
+          {{--<li><a href="{{ url('/blog') }}">Blog</a></li>--}}
+          <li><a href="{{ route('students.index') }}">Estudiantes</a></li>
+          <li><a href="{{ route('professor.index') }}">Profesores</a></li>
+          <li><a href="{{ route('students.index') }}">Materias</a></li>
+          <li><a href="{{ route('students.index') }}">Cursos</a></li>
+          <li><a href="{{ route('students.index') }}">Comisiones</a></li>
+          <li><a href="{{ route('students.index') }}">Estud. Inscriptos</a></li>          
+          {{--<li><a href="{{ action([App\Http\Controllers\CalculationController::class, 'showForm']) }}">Cálculo</a></li>
+          <li><a href="{{ url('/contacto') }}">Contacto</a></li>--}}
         </ul>
       </div>
     </div>
     <div id="mainimg">
-      <h3>inventions</h3>
-      <h4>for a wireless world</h4>
+      <h3></h3>
+      <h4></h4>
     </div>
     <div id="contentarea">
       <div id="leftbar">
@@ -40,7 +45,7 @@
           <a href="javascript:history.back()"> Volver </a> <br>
           <a href="{{ url()->previous() }}">Regresar</a>
          </p>
-        <p><span class="orangetext">12/08/2006</span><br />
+        {{--<p><span class="orangetext">12/08/2006</span><br />
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utid anisl nec leo congue fringilla. <br />
           <br />
           <span class="orangetext">10/08/2006</span><br />
@@ -48,7 +53,8 @@
           <br />
           <span class="orangetext">28/07/2006</span><br />
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Utid anisl nec leo congue fringilla. </p>
-      </div>
+          --}}
+        </div>
     </div>
     <div id="bottom">
       <div id="email"><a href="mailto:info@yourcompany.com">info@yourcompany.com</a></div>

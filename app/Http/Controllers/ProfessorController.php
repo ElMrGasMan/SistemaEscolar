@@ -9,17 +9,28 @@ class ProfessorController extends Controller
 {
     public function index()
     {
-        return Professor::all();
+        // Obtener todos los profesores
+        $professors = Professor::all();
+        return view('professors.index', compact('professors'));
     }
 
     public function store(Request $request)
     {
+        // Validar y crear el profesor
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'specialization' => 'required|string|max:255',
         ]);
 
-        return Professor::create($validated);
+        Professor::create($validated);
+
+        return redirect()->route('professors.index')->with('success', 'Profesor creado exitosamente.');
+    }
+    public function edit($id)
+    {
+        // Mostrar formulario para editar un profesor
+        $professor = Professor::findOrFail($id);
+        return view('professors.edit', compact('professor'));
     }
 
     public function show($id)
@@ -29,6 +40,7 @@ class ProfessorController extends Controller
 
     public function update(Request $request, $id)
     {
+        // Validar y actualizar los datos del profesor
         $professor = Professor::findOrFail($id);
 
         $validated = $request->validate([
@@ -38,14 +50,20 @@ class ProfessorController extends Controller
 
         $professor->update($validated);
 
-        return $professor;
+        return redirect()->route('professors.index')->with('success', 'Profesor actualizado exitosamente.');
     }
 
     public function destroy($id)
     {
+        // Eliminar el profesor
         $professor = Professor::findOrFail($id);
         $professor->delete();
 
-        return response()->json(['message' => 'Professor deleted successfully']);
+        return redirect()->route('professors.index')->with('success', 'Profesor eliminado exitosamente.');
+    }
+    public function create()
+    {
+        // Retorna la vista para crear un nuevo profesor
+        return view('professors.create');
     }
 }
