@@ -9,6 +9,7 @@ use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Student;
 use App\Models\Course;
+use App\Http\Controllers\ReportController;
 
 
 /*
@@ -180,3 +181,16 @@ Route::get('/professors/create', [ProfessorController::class, 'create'])->name('
 
 Route::post('/commissions/create', [CommissionController::class, 'store'])->name('commission.store');
 Route::post('/courses/create', [CourseController::class, 'store'])->name('course.store');
+
+
+
+// Ruta para mostrar reporte en el navegador
+Route::get('/reports/enrolled-students', [ReportController::class, 'enrolledStudentsReport'])->name('reports.enrolled_students');
+
+// Ruta para exportar a PDF
+Route::get('/reports/enrolled-students/pdf', [ReportController::class, 'exportEnrolledStudentsPDF'])->name('reports.enrolled_students.pdf');
+
+
+//Ruta para exportar a excel
+Route::get('/reports/enrolled-students/excel', [ReportController::class, 'exportEnrolledStudentsExcel'])->name('reports.enrolled_students.excel');
+

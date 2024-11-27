@@ -5,6 +5,9 @@
 @section('contenido')
 <h1>Students</h1>  
 <a href="{{ route('students.create') }}" class="btn btn-primary">Add Student</a>
+<a href="{{ route('reports.enrolled_students') }}" class="btn btn-primary">Exportar a PDF</a>
+
+
 
 @if(session('success'))  
     <div class="alert alert-success">{{ session('success') }}</div>  
