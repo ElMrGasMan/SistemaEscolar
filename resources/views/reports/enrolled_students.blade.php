@@ -11,6 +11,18 @@
         <a href="{{ route('reports.enrolled_students.excel') }}">Generar Excel</a>
     @endif
     
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+
     @if($students->count() > 0)
         <table border="1">
             <thead>

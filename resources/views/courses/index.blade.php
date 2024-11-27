@@ -14,7 +14,7 @@
         @endif
         
         <a href="{{ route('courses.create') }}" class="btn btn-primary">Crear Curso</a>
-        
+        <a href="{{ route('reports.courses_by_subject') }}" class="btn btn-primary">Exportar a PDF</a>
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>

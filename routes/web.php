@@ -186,6 +186,11 @@ Route::post('/courses/create', [CourseController::class, 'store'])->name('course
 
 // Ruta para mostrar reporte en el navegador
 Route::get('/reports/enrolled-students', [ReportController::class, 'enrolledStudentsReport'])->name('reports.enrolled_students');
+Route::get('/reports/courses-by-subject', [ReportController::class, 'coursesBySubjectReport'])->name('reports.courses_by_subject');
+Route::get('/reports/commissions-Schedules', [ReportController::class, 'commissionsAndSchedulesReport'])->name('reports.commissions_and_schedules');
+Route::get('/reports/professors-comissions', [ReportController::class, 'professorsAndCommissionsReport'])->name('reports.professors_and_commissions');
+
+
 
 // Ruta para exportar a PDF
 Route::get('/reports/enrolled-students/pdf', [ReportController::class, 'exportEnrolledStudentsPDF'])->name('reports.enrolled_students.pdf');

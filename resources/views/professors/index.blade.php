@@ -13,7 +13,9 @@
             </div>
         @endif
         
+        
         <a href="{{ route('professors.create') }}" class="btn btn-primary">Crear Profesor</a>
+        <a href="{{ route('reports.professors_and_commissions') }}" class="btn btn-primary">Exportar a PDF</a>
         
         <table class="table table-bordered mt-3">
             <thead>

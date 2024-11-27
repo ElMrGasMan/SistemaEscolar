@@ -14,6 +14,7 @@
         @endif
         
         <a href="{{ route('commissions.create') }}" class="btn btn-primary">Crear Comision</a>
+        <a href="{{ route('reports.commissions_and_schedules') }}" class="btn btn-primary">Exportar a PDF</a>
         
         <table class="table table-bordered mt-3">
             <thead>
