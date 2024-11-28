@@ -6,7 +6,7 @@
     <div class="container">
         <h2>Editar Curso</h2>
         
-        <form action="{{ route('course.update', $course->id) }}" method="POST">
+        <form action="{{ route('courses.update', $course->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -14,10 +14,10 @@
                 <input type="text" id="name" name="name" class="form-control" value="{{ $course->name }}" required>
             </div>
             <div class="form-group mt-2">
-                <label for="subject_id">Especialización:</label>
+                <label for="subject_id">ID de Materia:</label>
                 <input type="text" id="subject_id" name="subject_id" class="form-control" value="{{ $course->subject_id }}" required>
             </div>
-            <button type="submit" class="btn btn-success mt-3">Actualizar Profesor</button>
+            <button type="submit" class="btn btn-success mt-3">Actualizar Curso</button>
         </form>
     </div>
 @endsection

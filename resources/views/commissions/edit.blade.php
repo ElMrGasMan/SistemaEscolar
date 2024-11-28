@@ -6,7 +6,7 @@
     <div class="container">
         <h2>Editar Comision</h2>
         
-        <form action="{{ route('commission.update', $commission->id) }}" method="POST">
+        <form action="{{ route('commissions.update', $commission->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -25,7 +25,7 @@
                 <label for="horario">Horario:</label>
                 <input type="text" id="professor_id" name="professor_id" class="form-control" value="{{ $commission->professor_id }}" required>
             </div>
-            <button type="submit" class="btn btn-success mt-3">Actualizar Profesor</button>
+            <button type="submit" class="btn btn-success mt-3">Actualizar Comision</button>
         </form>
     </div>
 @endsection

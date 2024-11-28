@@ -1,7 +1,6 @@
-
 @extends('layouts.invention')
 
-@section('titulo', 'profesor ')
+@section('titulo', 'Profesor')
 
 @section('contenido')
     <div class="container">
@@ -13,9 +12,19 @@
             </div>
         @endif
         
-        <a href="{{ route('professors.create') }}" class="btn btn-primary">Crear Profesor</a>
+        <a href="{{ route('professors.create') }}" class="btn btn-primary mb-3">Crear Profesor</a>
         
-        <table class="table table-bordered mt-3">
+        <!-- Formulario de búsqueda -->
+        <form action="{{ route('professors.index') }}" method="GET" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Buscar por nombre"
+                        value="{{ old('search', $search ?? '') }}">
+                <button type="submit" class="btn btn-secondary">Buscar</button>
+            </div>
+        </form>
+        
+        <!-- Tabla de profesores -->
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -25,7 +34,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($professors as $professor)
+                @forelse ($professors as $professor)
                     <tr>
                         <td>{{ $professor->id }}</td>
                         <td>{{ $professor->name }}</td>
@@ -39,7 +48,11 @@
                             </form>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="4" class="text-center">No hay profesores que coincidan con la búsqueda.</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>
