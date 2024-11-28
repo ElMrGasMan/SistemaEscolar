@@ -12,7 +12,9 @@
             </div>
         @endif
         
-        <a href="{{ route('professors.create') }}" class="btn btn-primary mb-3">Crear Profesor</a>
+        
+        <a href="{{ route('professors.create') }}" class="btn btn-primary">Crear Profesor</a>
+        <a href="{{ route('reports.professors_and_commissions') }}" class="btn btn-primary">Exportar a PDF</a>
         
         <!-- Formulario de búsqueda -->
         <form action="{{ route('professors.index') }}" method="GET" class="mb-3">

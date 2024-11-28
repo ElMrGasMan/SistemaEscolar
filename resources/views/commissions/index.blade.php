@@ -41,6 +41,8 @@
                 <button type="submit" class="btn btn-secondary">Filtrar</button>
             </form>
         </div>
+       
+        <a href="{{ route('reports.commissions_and_schedules') }}" class="btn btn-primary">Exportar a PDF</a>
         
         <table class="table table-bordered mt-3">
             <thead>

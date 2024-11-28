@@ -31,6 +31,10 @@
     </form>
 </div>
 
+<a href="{{ route('reports.enrolled_students') }}" class="btn btn-primary">Exportar a PDF</a>
+
+
+
 @if(session('success'))  
     <div class="alert alert-success">{{ session('success') }}</div>  
 @endif
