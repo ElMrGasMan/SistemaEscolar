@@ -13,15 +13,45 @@
             </div>
         @endif
         
-        <a href="{{ route('commissions.create') }}" class="btn btn-primary">Crear Comision</a>
+        
+        <div class="d-flex justify-content-between mb-3">
+            <a href="{{ route('commissions.create') }}" class="btn btn-primary">Crear Comisión</a>
+
+            <!-- Formulario de filtros -->
+            <form method="GET" action="{{ route('commissions.index') }}" class="d-flex">
+                <select name="horario" class="form-control mr-2">
+                    <option value="">Todos los horarios</option>
+                    @foreach($horarios as $horario)
+                        <option value="{{ $horario }}" {{ request('horario') == $horario ? 'selected' : '' }}>
+                            {{ $horario }}
+                        </option>
+                    @endforeach
+                </select>
+
+                <select name="curso" class="form-control mr-2">
+                    <option value="">Todos los cursos</option>
+                    @foreach($cursos as $curso)
+                        <option value="{{ $curso->id }}" {{ request('curso') == $curso->id ? 'selected' : '' }}>
+                            {{ $curso->name }}
+                        </option>
+                    @endforeach
+                </select>
+                
+
+                <button type="submit" class="btn btn-secondary">Filtrar</button>
+            </form>
+        </div>
         
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Aula</th>
+                    <th>Horarios</th>
                     <th>Curso_id</th>
                     <th>Profesor_id</th>
+                    <th>Acciones</th>
+
                 </tr>
             </thead>
             <tbody>

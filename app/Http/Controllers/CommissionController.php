@@ -11,11 +11,26 @@ use Illuminate\Http\Request;
 class CommissionController extends Controller
 {
     // Mostrar una lista de comisiones
-    public function index()
+    public function index(Request $request)
     {
-        $commissions = Commission::with(['course', 'professor'])->get(); // Eager loading de cursos y profesores
-        return view('commissions.index', compact('commissions'));
+    $horarios = Commission::select('horario')->distinct()->pluck('horario');
+    $cursos = Course::all(); // Obtener todos los cursos
+
+    $query = Commission::query();
+
+    if ($request->filled('horario')) {
+        $query->where('horario', $request->horario);
     }
+
+    if ($request->filled('curso')) {
+        $query->where('course_id', $request->curso);
+    }
+
+    $commissions = $query->with('course')->get(); // Eager loading para Course
+
+    return view('commissions.index', compact('commissions', 'horarios', 'cursos'));
+    }
+
 
     // Mostrar el formulario para crear una nueva comisión
     public function create()

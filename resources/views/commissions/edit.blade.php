@@ -6,7 +6,7 @@
     <div class="container">
         <h2>Editar Comision</h2>
         
-        <form action="{{ route('commission.update', $commission->id) }}" method="POST">
+        <form action="{{ route('commissions.update', $commission->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
