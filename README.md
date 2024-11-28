@@ -128,5 +128,16 @@ Cargar datos iniciales (opcional): Si deseas agregar datos de prueba, puedes usa
 php artisan db:seed
 
 
+# Configuraciones por ERRORES Adicionales:
+Para que el proyecto funcione sin problemas; ya que las dependencias de exportacion
+de excel y PDF pueden ocasionar errores. 
 
+Si se experiencian problemas con las dependencias se debe hacer lo siguiente:
 
+Para poder hacerlo primero se debe ir al arhcivo "php.ini". El mismo se encuentra dentro
+de la carpeta de XAMPP: "C:\xampp\php" en Windows, o en la ruta que esté intalado el xampp.
+
+Ya dentro del archivo se debe buscar las lineas "extension=gd" y "extension=zip", acto seguido se debe borrar los punto y coma que están al principio de estas lineas, de este modo se habilitan las extensiones para su descarga, acto seguido guardar el archivo. Si estas extensiones ya estan habilitadas entonces se puede ignorar este paso.
+
+Luego de eso se debe correr el comando de "composer update --with-all-dependencies"
+esto descargará todas las dependencias necesarias para hacer correr el sistema.
