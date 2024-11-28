@@ -13,6 +13,7 @@
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ $course->name }}" required>
             </div>
+            
             <div class="form-group mt-2">
                 <label for="subject_id">ID de Materia:</label>
                 <input type="text" id="subject_id" name="subject_id" class="form-control" value="{{ $course->subject_id }}" required>

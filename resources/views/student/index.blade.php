@@ -4,7 +4,36 @@
 
 @section('contenido')
 <h1>Students</h1>  
-<a href="{{ route('students.create') }}" class="btn btn-primary">Add Student</a>
+
+
+<div class="d-flex mb-3">
+    <a href="{{ route('students.create') }}" class="btn btn-primary me-2">Add Student</a>
+
+    <!-- Filtro por nombre -->
+    <form method="GET" action="{{ route('students.index') }}" class="me-2">
+        <select name="sort_name" class="form-select" onchange="this.form.submit()">
+            <option value="">Sort by Name</option>
+            <option value="asc" {{ request('sort_name') == 'asc' ? 'selected' : '' }}>A-Z</option>
+            <option value="desc" {{ request('sort_name') == 'desc' ? 'selected' : '' }}>Z-A</option>
+        </select>
+    </form>
+
+    <!-- Filtro por curso -->
+    <form method="GET" action="{{ route('students.index') }}">
+        <select name="course_id" class="form-select" onchange="this.form.submit()">
+            <option value="">Filter by Course</option>
+            @foreach($courses as $course)
+                <option value="{{ $course->id }}" {{ request('course_id') == $course->id ? 'selected' : '' }}>
+                    {{ $course->name }}
+                </option>
+            @endforeach
+        </select>
+    </form>
+</div>
+
+<a href="{{ route('reports.enrolled_students') }}" class="btn btn-primary">Exportar a PDF</a>
+
+
 
 @if(session('success'))  
     <div class="alert alert-success">{{ session('success') }}</div>  

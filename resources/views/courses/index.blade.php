@@ -32,6 +32,7 @@
         </form>
         
         <!-- Tabla de cursos -->
+        <a href="{{ route('reports.courses_by_subject') }}" class="btn btn-primary">Exportar a PDF</a>
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>

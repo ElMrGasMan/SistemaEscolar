@@ -3,7 +3,6 @@
 
 @section('content')
 
-
 <form action="{{ isset($student) ? route('students.update', $student) : route('students.store') }}" method="POST">
     @csrf
     @if(isset($student))
