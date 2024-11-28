@@ -9,14 +9,24 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
     // Mostrar una lista de cursos
-    public function index()
+    public function index(Request $request)
     {
-        $courses = Course::with('subject')->get(); // Eager loading para cargar el "subject" relacionado
-        return view('courses.index', compact('courses'));
+        // Traer todas las materias para el filtro
+        $subjects = Subject::all();
+
+        // Filtrar cursos por materia si se selecciona un filtro
+        $query = Course::with('subject');
+        if ($request->has('subject_id') && $request->subject_id) {
+            $query->where('subject_id', $request->subject_id);
+        }
+
+        $courses = $query->get();
+
+        return view('courses.index', compact('courses', 'subjects'));
     }
 
     // Mostrar el formulario para crear un nuevo curso
-    //Trae todos los cursos disponibles para mostrarlos y poder seleccionarlos
+    // Trae todos los cursos disponibles para mostrarlos y poder seleccionarlos
     public function create()
     {
         $subjects = Subject::all();  // Traer todos los subjects disponibles

@@ -29,8 +29,8 @@
                 @foreach ($courseStudents as $courseStudent)
                     <tr>
                         <td>{{ $courseStudent->id }}</td>
-                        <td>{{ $courseStudent->student_id }}</td>
-                        <td>{{ $courseStudent->course_id }}</td>
+                        <td>{{ $courseStudent->student->name }}</td>
+                        <td>{{ $courseStudent->course->name }}</td>
                         <td>{{ $courseStudent->commission_id }}</td>
                         <td>
                             <a href="{{ route('course_students.edit', $courseStudent->id) }}" class="btn btn-warning btn-sm">Editar</a>

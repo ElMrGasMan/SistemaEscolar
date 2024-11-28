@@ -7,12 +7,23 @@ use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Obtener todos los profesores
-        $professors = Professor::all();
-        return view('professors.index', compact('professors'));
+        // Obtener el término de búsqueda (si lo hay)
+        $search = $request->input('search');
+
+        // Buscar profesores por nombre si se proporciona un término
+        $query = Professor::query();
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
+        // Obtener los resultados
+        $professors = $query->get();
+
+        return view('professors.index', compact('professors', 'search'));
     }
+
 
     public function store(Request $request)
     {

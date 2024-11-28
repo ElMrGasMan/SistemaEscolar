@@ -25,7 +25,7 @@
                 <label for="horario">Horario:</label>
                 <input type="text" id="professor_id" name="professor_id" class="form-control" value="{{ $commission->professor_id }}" required>
             </div>
-            <button type="submit" class="btn btn-success mt-3">Actualizar Profesor</button>
+            <button type="submit" class="btn btn-success mt-3">Actualizar Comision</button>
         </form>
     </div>
 @endsection
