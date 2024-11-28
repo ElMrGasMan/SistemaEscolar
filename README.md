@@ -137,7 +137,13 @@ Si se experiencian problemas con las dependencias se debe hacer lo siguiente:
 Para poder hacerlo primero se debe ir al arhcivo "php.ini". El mismo se encuentra dentro
 de la carpeta de XAMPP: "C:\xampp\php" en Windows, o en la ruta que esté intalado el xampp.
 
-Ya dentro del archivo se debe buscar las lineas "extension=gd" y "extension=zip", acto seguido se debe borrar los punto y coma que están al principio de estas lineas, de este modo se habilitan las extensiones para su descarga, acto seguido guardar el archivo. Si estas extensiones ya estan habilitadas entonces se puede ignorar este paso.
+Ya dentro del archivo se debe buscar las lineas "extension=gd" y "extension=zip" (esta ultima puede que no esté), acto seguido se debe borrar los punto y coma que están al principio de estas lineas, de este modo se habilitan las extensiones para su descarga, acto seguido guardar el archivo. Si estas extensiones ya estan habilitadas entonces se puede ignorar este paso.
 
 Luego de eso se debe correr el comando de "composer update --with-all-dependencies"
 esto descargará todas las dependencias necesarias para hacer correr el sistema.
+
+
+# Iniciar el Servidor
+
+Por ultimo, para iniciar el servidor se debe escribir en la terminal:
+"php artisan serve" o usar el servidor apache de XAMPP.
