@@ -194,8 +194,13 @@ Route::get('/reports/professors-comissions', [ReportController::class, 'professo
 
 // Ruta para exportar a PDF
 Route::get('/reports/enrolled-students/pdf', [ReportController::class, 'exportEnrolledStudentsPDF'])->name('reports.enrolled_students.pdf');
-
+Route::get('/reports/courses-by-subject/pdf', [ReportController::class, 'exportCoursesBySubjectPDF'])->name('reports.courses_by_subject.pdf');
+Route::get('reports/commissions-Schedules/pdf',[ReportController::class, 'exportCommissionsAndSchedulesPDF'])->name('reports.commissions_and_schedules.pdf');
+Route::get('/reports/professors-comissions/pdf', [ReportController::class, 'exportProfessorsAndCommissionsPDF'])->name('reports.professors_and_commissions.pdf');
 
 //Ruta para exportar a excel
 Route::get('/reports/enrolled-students/excel', [ReportController::class, 'exportEnrolledStudentsExcel'])->name('reports.enrolled_students.excel');
+Route::get('/reports/courses-by-subject/excel', [ReportController::class, 'exportCoursesBySubjectExcel'])->name('reports.courses_by_subject.excel');
+Route::get('reports/commissions-Schedules/excel',[ReportController::class, 'exportCommissionsAndSchedulesExcel'])->name('reports.commissions_and_schedules.excel');
+Route::get('/reports/professors-comissions/excel', [ReportController::class, 'exportProfessorsAndCommissionsExcel'])->name('reports.professors_and_commissions.excel');
 

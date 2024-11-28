@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de Asistencia de Profesores</title>
+
+    
+    @if(!$isPdf)
+    <!-- ACA VA EL GENERAR PDF -->
+        <a href="{{ route('reports.professors_and_commissions.pdf') }}">Generar PDF</a>
+        <!-- ACA VA EL GENERAR EXCEL -->
+        <a href="{{ route('reports.professors_and_commissions.excel') }}">Generar Excel</a>
+    @endif
+
+
     <style>
         table {
             width: 100%;

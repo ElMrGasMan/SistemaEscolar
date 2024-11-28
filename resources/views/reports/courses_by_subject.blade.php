@@ -6,7 +6,7 @@
     <title>Reporte de Cursos por Materia</title>
     
     @if(!$isPdf)
-        <a href="{{ route('reports.courses_by_subject') }}">Generar PDF</a>
+        <a href="{{ route('reports.courses_by_subject.pdf') }}">Generar PDF</a>
         <a href="{{ route('reports.courses_by_subject') }}">Generar Excel</a>
     @endif
 

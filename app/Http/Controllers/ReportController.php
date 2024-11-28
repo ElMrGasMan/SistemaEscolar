@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EnrolledStudentsExport;
+use App\Exports\ProfessorsAndCommissionsExport;
 
 class ReportController extends Controller
 {
@@ -68,13 +69,29 @@ class ReportController extends Controller
         $subjects = \App\Models\Subject::with('courses')->get();  // Obtener materias con los cursos asociados
         $isPdf = true;
 
+
         // Generar PDF con los datos
         $pdf = Pdf::loadView('reports.courses_by_subject', compact('subjects', 'isPdf'));
 
         return $pdf->download('reporte_cursos_por_materia.pdf');
     }
+    public function exportCommissionsAndSchedulesPDF()
+    {
+        $commissions = \App\Models\Commission::with(['course', 'professor'])->get();
+        $isPdf = true;
+        $pdf = Pdf::loadView('reports.commissions_and_schedules', compact('commissions', 'isPdf'));
 
+        return $pdf->download('reporte_comisiones_y_horarios.pdf');
+    }
+    public function exportProfessorsAndCommissionsPDF()
+    {
+        $professors = \App\Models\Professor::with('commissions')->get();
+        $isPdf = true;
+        $pdf = Pdf::loadView('reports.professors_and_commissions', compact('professors', 'isPdf'));
 
+        return $pdf->download('reporte_asistencia_profesores.pdf');
+    }
+    
 
 
     //-----------------------------------------------------------------------------------------------------
@@ -84,10 +101,24 @@ class ReportController extends Controller
         return Excel::download(new EnrolledStudentsExport, 'reporte_estudiantes_inscritos.xlsx');
 
     }
+
+
     public function exportCoursesBySubjectExcel()
     {
         return Excel::download(new CoursesBySubjectExport, 'reporte_cursos_por_materia.xlsx');
     }
 
+
+
+    public function exportProfessorsAndCommissionsExcel()
+    {
+        return Excel::download(new ProfessorsAndCommissionsExport, 'reporte_profesores_y_comisiones.xlsx');
+    }
+
+
+    public function exportCommissionsAndSchedulesExcel()
+    {
+        return Excel::download(new CommissionsAndSchedulesExport, 'reporte_comisiones_y_horarios.xlsx');
+    }
 
 }

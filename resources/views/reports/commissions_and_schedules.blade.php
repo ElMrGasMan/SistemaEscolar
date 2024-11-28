@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de Comisiones y Horarios</title>
+
+
+    @if(!$isPdf)
+        <a href="{{ route('reports.commissions_and_schedules.pdf') }}">Generar PDF</a>
+        <!-- ACA VA EL GENERAR EXCEL -->
+    @endif
+
     <style>
         table {
             width: 100%;
