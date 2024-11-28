@@ -62,3 +62,82 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# Proyecto Escolar en Laravel
+
+![](https://th.bing.com/th/id/OIP.LL222BTPq5cqoh4QSakTvAHaE8?w=263&h=180&c=7&r=0&o=5&dpr=2.4&pid=1.7)
+
+
+# Introducción
+
+Este proyecto escolar está diseñado para facilitar la gestión de la información de una escuela mediante una aplicación web desarrollada con el framework Laravel. 
+La aplicación permite registrar, modificar, eliminar y actualizar los datos relacionados con cursos, profesores, alumnos y materias, con un sistema de base de datos estructurado para cada uno de estos elementos.
+
+La plataforma tiene como objetivo principal organizar y centralizar la información de manera eficiente, permitiendo a los administradores gestionar los datos de la institución de forma sencilla y accesible. 
+Con una interfaz intuitiva, los usuarios pueden interactuar con el sistema a través de formularios web que facilitan las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los distintos registros, manteniendo la información siempre actualizada.
+
+El sistema está basado en un conjunto de tablas interrelacionadas que permiten almacenar:
+
+    Cursos: Información sobre los cursos ofrecidos.
+    Profesores: Datos sobre los profesores que imparten clases en cada curso.
+    Alumnos: Registros de los estudiantes y su relación con los cursos y materias.
+    Materias: Detalles de las asignaturas que los profesores imparten.
+
+Este proyecto está pensado tanto para el personal administrativo como para los docentes, quienes podrán gestionar fácilmente todos los aspectos académicos de la institución.
+
+# Configuración
+
+Una vez que hayas instalado el sistema, asegúrate de que la base de datos esté correctamente configurada. Laravel utiliza Eloquent ORM para interactuar con la base de datos, lo que permite realizar operaciones como:
+
+    Agregar datos: Crear nuevos registros de cursos, profesores, alumnos o materias.
+    Editar datos: Modificar registros existentes.
+    Eliminar datos: Eliminar registros de la base de datos.
+    Actualizar datos: Actualizar información de los registros en la base de datos.
+
+# Uso
+
+    Acceder al sistema: Una vez que todo esté instalado y configurado, puedes acceder al sistema a través de tu navegador en la URL http://localhost:8000.
+
+    Navegar por las secciones: El sistema cuenta con una interfaz web para gestionar los siguientes módulos:
+        Cursos: Visualizar, agregar, editar y eliminar cursos.
+        Profesores: Administrar la información de los profesores.
+        Alumnos: Gestionar los registros de los alumnos.
+        Materias: Añadir y actualizar las materias.
+
+    Operaciones CRUD:
+        Crear: Puedes agregar nuevos registros a través de los formularios de entrada.
+        Leer: Visualiza todos los registros de los cursos, profesores, alumnos o materias.
+        Actualizar: Modifica los detalles de los registros existentes.
+        Eliminar: Borra registros de la base de datos.
+
+   Instalar las dependencias de Composer:
+composer install
+
+Configurar el archivo .env: Copia el archivo .env.example y renómbralo a .env. Luego, configura los parámetros de la base de datos:
+cp .env.example .env
+
+Edita el archivo .env para incluir los detalles de tu base de datos, como el nombre de la base de datos, usuario y contraseña.
+
+Generar la clave de la aplicación:
+php artisan key:generate
+
+Ejecutar las migraciones:
+php artisan migrate
+
+Cargar datos iniciales (opcional): Si deseas agregar datos de prueba, puedes usar los factories y seeders de Laravel para insertar datos de ejemplo:
+php artisan db:seed
+
+
+# Configuraciones por ERRORES Adicionales:
+Para que el proyecto funcione sin problemas; ya que las dependencias de exportacion
+de excel y PDF pueden ocasionar errores. 
+
+Si se experiencian problemas con las dependencias se debe hacer lo siguiente:
+
+Para poder hacerlo primero se debe ir al arhcivo "php.ini". El mismo se encuentra dentro
+de la carpeta de XAMPP: "C:\xampp\php" en Windows, o en la ruta que esté intalado el xampp.
+
+Ya dentro del archivo se debe buscar las lineas "extension=gd" y "extension=zip", acto seguido se debe borrar los punto y coma que están al principio de estas lineas, de este modo se habilitan las extensiones para su descarga, acto seguido guardar el archivo. Si estas extensiones ya estan habilitadas entonces se puede ignorar este paso.
+
+Luego de eso se debe correr el comando de "composer update --with-all-dependencies"
+esto descargará todas las dependencias necesarias para hacer correr el sistema.
