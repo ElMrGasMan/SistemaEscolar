@@ -10,28 +10,28 @@ class StudentController extends Controller
 {
     //
     public function index(Request $request)
-{
-    $query = Student::query();
+    {
+        $query = Student::query();
+        
+        // Filtrar por nombre (orden alfabético)
+        if ($request->filled('sort_name')) {
+            $query->orderBy('name', $request->sort_name == 'asc' ? 'asc' : 'desc');
+        }
 
-    // Filtrar por nombre (orden alfabético)
-    if ($request->filled('sort_name')) {
-        $query->orderBy('name', $request->sort_name == 'asc' ? 'asc' : 'desc');
+        // Filtrar por curso
+        if ($request->filled('course_id')) {
+            $query->whereHas('courses', function ($q) use ($request) {
+                $q->where('course_id', $request->course_id);
+            });
+        }
+
+        $students = $query->get();
+
+        // Obtener lista de cursos para el filtro
+        $courses = \App\Models\Course::all();
+
+        return view('student.index', compact('students', 'courses'));
     }
-
-    // Filtrar por curso
-    if ($request->filled('course_id')) {
-        $query->whereHas('courses', function ($q) use ($request) {
-            $q->where('course_id', $request->course_id);
-        });
-    }
-
-    $students = $query->get();
-
-    // Obtener lista de cursos para el filtro
-    $courses = \App\Models\Course::all();
-
-    return view('student.index', compact('students', 'courses'));
-}
 
     //
     public function create()
